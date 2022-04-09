@@ -32,7 +32,7 @@
                     return 'text-gray-400'
                 }
                 else {
-                    return 'text-green-400'
+                    return 'text-green-500'
                 }
             }
          }"
