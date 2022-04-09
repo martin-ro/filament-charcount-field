@@ -93,7 +93,7 @@
                 'border-danger-600 ring-danger-600' => $errors->has($getStatePath()),
             ]) }}
             />
-            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-gray-400 text-sm" :class="color">
+            <div class="absolute inset-y-0 right-0 pr-2 flex items-center pointer-events-none text-gray-400 text-sm" :class="color">
                 <span x-text="current"></span> {{ $getMaxCharactersValue() ? '/'.$getMaxCharactersValue() : null }}
             </div>
         </div>
