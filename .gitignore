@@ -1,0 +1,14 @@
+.idea
+.vscode
+.phpunit.result.cache
+.php-cs-fixer.cache
+.php_cs.cache
+.php_cs
+.phpstorm.meta.php
+composer.lock
+phpunit.xml
+vendor
+coverage
+node_modules
+.DS_Store
+testbench.yaml

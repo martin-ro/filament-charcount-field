@@ -1,0 +1,61 @@
+{
+    "name": "martin-ro/filament-charcount-field",
+    "description": "Filament fields with character count.",
+    "keywords": [
+        "martin-ro",
+        "laravel",
+        "filament",
+        "filament-charcount-field"
+    ],
+    "homepage": "https://github.com/martin-ro/filament-charcount-field",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin Ro",
+            "email": "mail@martin.ph",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "filament/filament": "^2.10",
+        "illuminate/contracts": "^8.73|^9.0"
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^5.10|^6.1",
+        "orchestra/testbench": "^6.22|^7.0",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-laravel": "^1.1",
+        "phpunit/phpunit": "^9.5",
+        "spatie/laravel-ray": "^1.26"
+    },
+    "autoload": {
+        "psr-4": {
+            "MartinRo\\FilamentCharcountField\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MartinRo\\FilamentCharcountField\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MartinRo\\FilamentCharcountField\\FilamentCharcountFieldServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
