@@ -1,4 +1,4 @@
-![filament-charcounted-field](https://github.com/martin-ro/filament-charcounted-field/blob/main/art/banner.png)
+![filament-charcounted-field](https://github.com/martin-ro/filament-charcount-field/blob/main/art/banner.png)
 
 # Character counted TextInput & Textarea for Filament.
 
@@ -23,17 +23,17 @@ CharcountedTextarea::make('title')
 ```
 
 Here's an example of how the components looks like:
-![Example of Filament Charcounted Field components](https://github.com/martin-ro/filament-charcounted-field/blob/main/art/example.png)
+![Example of Filament Charcounted Field components](https://github.com/martin-ro/filament-charcount-field/blob/main/art/example.png)
 
 Demo:
-![Demo of Filament Charcounted Field components](https://github.com/martin-ro/filament-charcounted-field/blob/main/art/demo.gif)
+![Demo of Filament Charcounted Field components](https://github.com/martin-ro/filament-charcount-field/blob/main/art/demo.gif)
 
 ## Installation
 
 First, install the packages:
 
 ```shell
-composer require martin-ro/filament-charcounted-field
+composer require martin-ro/filament-charcount-field
 ```
 
 Add the components to a Filament resource form:
