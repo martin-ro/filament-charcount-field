@@ -26,6 +26,7 @@ Here's an example of how the components looks like:
 ![Example of Filament Charcounted Field components](https://github.com/martin-ro/filament-charcount-field/blob/main/art/example.png)
 
 Demo:
+
 ![Demo of Filament Charcounted Field components](https://github.com/martin-ro/filament-charcount-field/blob/main/art/demo.gif)
 
 ## Installation
