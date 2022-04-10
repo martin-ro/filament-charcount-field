@@ -8,45 +8,16 @@
     :required="$isRequired()"
     :state-path="$getStatePath()"
 >
-    <div class="relative" x-data="{
-            content: '',
-            min: $el.dataset.min,
-            max: $el.dataset.max,
-            get current() {
-                return this.content.length
-            },
-            get remaining() {
-                return this.max - this.content.length
-            },
-            get under() {
-                return this.min - this.content.length
-            },
-            get color() {
-                if(this.current == 0) {
-                    return 'text-gray-400'
-                }
-                else if(this.current < this.min || this.current > this.max) {
-                    return 'text-danger-400'
-                }
-                else if (this.min == null && this.max == null) {
-                    return 'text-gray-400'
-                }
-                else {
-                    return 'text-green-500'
-                }
-            }
-         }"
-        {!! ($min = $getMinCharactersValue()) ? "data-min=\"{$min}\"" : null !!}
-        {!! ($max = $getMaxCharactersValue()) ? "data-max=\"{$max}\"" : null !!}
-    >
-    <textarea
-        x-model="content"
-        {!! ($autocapitalize = $getAutocapitalize()) ? "autocapitalize=\"{$autocapitalize}\"" : null !!}
-        {!! ($autocomplete = $getAutocomplete()) ? "autocomplete=\"{$autocomplete}\"" : null !!}
-        {!! $isAutofocused() ? 'autofocus' : null !!}
-        {!! ($cols = $getCols()) ? "cols=\"{$cols}\"" : null !!}
-        {!! $isDisabled() ? 'disabled' : null !!}
-        id="{{ $getId() }}"
+    <x-filament-charcount-field::wrapper :min="$getMinCharactersValue()" :max="$getMaxCharactersValue()">
+        <textarea
+            {!! ($autocapitalize = $getAutocapitalize()) ? "autocapitalize=\"{$autocapitalize}\"" : null !!}
+            {!! ($autocomplete = $getAutocomplete()) ? "autocomplete=\"{$autocomplete}\"" : null !!}
+            {!! $isAutofocused() ? 'autofocus' : null !!}
+            {!! ($cols = $getCols()) ? "cols=\"{$cols}\"" : null !!}
+            {!! $isDisabled() ? 'disabled' : null !!}
+            id="{{ $getId() }}"
+        x-ref="countInput"
+        x-on:keyup="count = $refs.countInput.value.length"
         {!! filled($length = $getMaxLength()) ? "maxlength=\"{$length}\"" : null !!}
         {!! filled($length = $getMinLength()) ? "minlength=\"{$length}\"" : null !!}
         {!! ($placeholder = $getPlaceholder()) ? "placeholder=\"{$placeholder}\"" : null !!}
@@ -70,9 +41,6 @@
             style="height: 150px"
             {{ $getExtraAlpineAttributeBag() }}
         @endif
-    ></textarea>
-        <div class="absolute top-0 right-0 pr-2 pt-1 flex items-center pointer-events-none text-gray-400 text-sm" :class="color">
-            <span x-text="current"></span> {{ $getMaxCharactersValue() ? '/'.$getMaxCharactersValue() : null }}
-        </div>
-    </div>
+        ></textarea>
+    </x-filament-charcount-field::wrapper>
 </x-forms::field-wrapper>
