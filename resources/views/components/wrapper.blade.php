@@ -4,7 +4,7 @@
 ])
 <div class="flex-1 relative"
      x-data="{
-            count: $refs.countInput.value.length,
+            count: $refs.countInput ? $refs.countInput.value.length : 0,
             min: $el.dataset.min,
             max: $el.dataset.max,
             get remaining() {
