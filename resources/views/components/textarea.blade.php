@@ -35,12 +35,6 @@
                     'border-danger-600 ring-danger-600' => $errors->has($getStatePath()),
                 ])
         }}
-        @if ($shouldAutosize())
-            x-data="textareaFormComponent()"
-            x-on:input="render()"
-            style="height: 150px"
-            {{ $getExtraAlpineAttributeBag() }}
-        @endif
         ></textarea>
     </x-filament-charcount-field::wrapper>
 </x-forms::field-wrapper>
