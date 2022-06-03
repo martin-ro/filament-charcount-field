@@ -1,4 +1,5 @@
-<x-forms::field-wrapper
+<x-dynamic-component
+    :component="$getFieldWrapperView()"
     :id="$getId()"
     :label="$getLabel()"
     :label-sr-only="$isLabelHidden()"
@@ -16,14 +17,17 @@
             {!! ($cols = $getCols()) ? "cols=\"{$cols}\"" : null !!}
             {!! $isDisabled() ? 'disabled' : null !!}
             id="{{ $getId() }}"
-        x-ref="countInput"
-        x-on:keyup="count = $refs.countInput.value.length"
-        {!! filled($length = $getMaxLength()) ? "maxlength=\"{$length}\"" : null !!}
-        {!! filled($length = $getMinLength()) ? "minlength=\"{$length}\"" : null !!}
+            dusk="filament.forms.{{ $getStatePath() }}"
+            x-ref="countInput"
+            x-on:keyup="count = $refs.countInput.value.length"
         {!! ($placeholder = $getPlaceholder()) ? "placeholder=\"{$placeholder}\"" : null !!}
-        {!! $isRequired() ? 'required' : null !!}
         {!! ($rows = $getRows()) ? "rows=\"{$rows}\"" : null !!}
         {{ $applyStateBindingModifiers('wire:model') }}="{{ $getStatePath() }}"
+        @if (! $isConcealed())
+            {!! filled($length = $getMaxLength()) ? "maxlength=\"{$length}\"" : null !!}
+            {!! filled($length = $getMinLength()) ? "minlength=\"{$length}\"" : null !!}
+            {!! $isRequired() ? 'required' : null !!}
+        @endif
         {{
             $attributes
                 ->merge($getExtraAttributes())
@@ -43,4 +47,4 @@
         @endif
         ></textarea>
     </x-filament-charcount-field::wrapper>
-</x-forms::field-wrapper>
+</x-dynamic-component>
