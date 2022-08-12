@@ -48,6 +48,7 @@
                 {{ $getExtraAlpineAttributeBag() }}
             @endunless
             x-ref="countInput"
+            x-init="count = $refs.countInput.value.length"
             x-on:keyup="count = $refs.countInput.value.length"
             dusk="filament.forms.{{ $getStatePath() }}"
             {!! ($autocapitalize = $getAutocapitalize()) ? "autocapitalize=\"{$autocapitalize}\"" : null !!}
