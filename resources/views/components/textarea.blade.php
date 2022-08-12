@@ -19,6 +19,7 @@
             id="{{ $getId() }}"
             dusk="filament.forms.{{ $getStatePath() }}"
             x-ref="countInput"
+            x-init="count = $refs.countInput.value.length"
             x-on:keyup="count = $refs.countInput.value.length"
         {!! ($placeholder = $getPlaceholder()) ? "placeholder=\"{$placeholder}\"" : null !!}
         {!! ($rows = $getRows()) ? "rows=\"{$rows}\"" : null !!}
